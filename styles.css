@@ -1,0 +1,181 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff1f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Envelope Wrapper */
+.envelope-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Envelope Styling */
+.envelope {
+  position: relative;
+  width: 80vmin; /* Increased size */
+  height: 60vmin; /* Increased size */
+  background: #f4cccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: #ff9aa2;
+  top: 0;
+  border-radius: 5px 5px 0 0;
+  transform-origin: top;
+  transition: transform 0.5s ease-in-out;
+}
+
+.flap.open {
+  transform: rotateX(-150deg);
+}
+
+/* Letter Styling */
+.letter {
+  position: absolute;
+  width: 95%;
+  height: 85%; /* Increased height */
+  background: #ffe6ea;
+  top: 110%;
+  left: 2.5%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out 0.5s, transform 0.5s ease-in-out 0.5s;
+}
+
+.letter.show {
+  opacity: 1;
+  transform: translateY(-120%);
+}
+
+/* Container Styling (Your Original Design) */
+.container {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+/* Header */
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff5678;
+  margin-bottom: 20px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #ff3250;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* Slightly bigger font size */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ff5678;
+}
+
+/* Photo Collage Section */
+.photo-collage {
+  margin-top: 20px;
+}
+
+.photo-collage h2 {
+  color: #ff3250;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.collage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.collage img {
+  width: calc(50% - 10px); /* 2 images per row */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.collage img:hover {
+  transform: scale(1.05);
+}
+
+/* Video Section */
+.video-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.video-section video {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 100%; /* Make sure it scales with the page */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  .envelope {
+    width: 90vmin; /* Increase size for mobile */
+    height: 65vmin; /* Adjust height to match mobile proportions */
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* Smaller title size */
+  }
+
+  .collage img {
+    width: 100%; /* 1 image per row on mobile */
+  }
+
+  .photo-collage, .video-section {
+    padding: 10px;
+  }
+
+  .video-section video {
+    width: 100%;
+  }
+}
